@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drum Kit Challenge</title>
+</head>
+<style>
+  body{
+    background-image: url('src/images/thumb-1920-1377057.png');
+    width: 100%;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+
+  }
+  .backg{
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.5;
+    z-index: 1;
+    position: absolute;
+  }
+  .box{
+    width: 4rem;
+    height: 4rem;
+    border: 2px rgb(255, 255, 255) solid;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: -10px;
+    z-index: 2;
+    background-color: transparent;
+    
+  }
+  h1{
+    color: white;
+    margin: 0;
+  }
+  h3{
+    color: gold;
+    margin: 0;
+
+  }
+  .allboxes{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+<body>
+  <div class="backg">
+  </div>
+  <div class="allboxes">
+  <button class="box">
+    <h1>A</h1>
+    <h3>Clap</h3>
+  </button>
+</div>
+</body>
+</html>
