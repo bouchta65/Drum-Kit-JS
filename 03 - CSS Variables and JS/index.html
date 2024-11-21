@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body{
+  margin:2rem;
+  padding: 0;
+  background-color: rgb(30, 56, 79);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2px;
+  }
+  h1{
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    margin: 0;
+  }
+  h3{
+    color: white;
+    font-size: 25px;
+  }
+  .items{
+    margin: 0;
+    display: flex;
+    gap: 50px;
+  }
+  .v1{
+    width: 5px;
+    height: 70px;
+    background-color: cornflowerblue;
+    rotate: 90deg;
+    margin-top: 10px;
+    
+  }
+  img{
+    border: solid 10px black;
+  }
+  #Color{
+    margin-top: 26px;
+    width: 60px;
+  }
+</style>
+<body>
+  <div>
+    <h1>Update CSS Variables With JS</h1>
+  </div>
+  <div class="items">
+    <h3>Spacing</h3>
+    <input type="range" id="Spacing" onchange="funSpacing()">
+    <h3>Blur</h3>
+    <input type="range" id="Blur" onchange="funBlur()">
+    <h3>Base Color</h3>
+
+    <input type="color" name="" id="Color" onchange="funColor()">
+    
+  </div>
+
+  <img id="image" width="50%" src="F:\YouCode\Projet\Javascript30-main\01 - JavaScript Drum Kit\src\images\thumb-1920-1377057.png" alt="">
+  <script >
+   function funSpacing(){
+
+ var S= document.getElementById('Spacing').value;
+
+ document.getElementById('image').style.borderWidth=S+"PX";
+
+
+   }
+   function funColor(){
+ var S= document.getElementById('Color').value;
+ document.getElementById('image').style.borderColor=S;
+
+
+   } 
+   function funBlur(){
+ var S= document.getElementById('Blur').value;
+ document.getElementById('image').style.filter="blur("+S+"px)";
+   }
+</script>
+</body>
+</html>
