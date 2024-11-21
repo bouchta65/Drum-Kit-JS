@@ -92,5 +92,23 @@
       <div class="flesh3"></div>
     </div>
   </div>
+  <script>
+    const flesh2 = document.querySelector('.flesh2')
+    const flesh1 = document.querySelector('.flesh1')
+    const flesh3 = document.querySelector('.flesh3')
+    function setDate(){
+      const now = new Date()
+      const seconds = now.getSeconds()
+      const hour = now.getHours()
+      const minutes = now.getMinutes()
+      const hourDeg = (hour % 12) * 30 + (minutes / 60) * 30;
+      const minDeg = (minutes / 60) * 360 + (seconds / 60) * 6;
+      const secondDeg = (seconds/60)*360
+      flesh2.style.transform = `rotate(${secondDeg}deg)`
+      flesh1.style.transform = `rotate(${hourDeg}deg)`
+      flesh3.style.transform = `rotate(${minDeg}deg)`
+    }
+    setInterval(setDate,1000)
+  </script>
 </body>
 </html>
