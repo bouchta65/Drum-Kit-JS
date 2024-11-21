@@ -53,20 +53,50 @@
     align-items: center;
     gap: 20PX;
   }
+  .playing {
+  border: 3px solid gold; 
+  background-color: rgba(130, 128, 0, 0.8); 
+  transform: scale(1.2); 
+  box-shadow: 0 0 15px gold, 0 0 30px rgba(255, 215, 0, 0.8); 
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; 
+}
 </style>
 <body>
   <div class="backg">
   </div>
   <div class="allboxes">
-  <button data-key="1" class="box">  <h1>A</h1>  <h5>CLAP</h5> </button>
-  <button data-key="1" class="box">  <h1>S</h1>  <h5>HIHAT</h5> </button>
-  <button data-key="1" class="box">  <h1>D</h1>  <H5>KICK</H5> </button>
-  <button data-key="1" class="box">  <h1>F</h1>  <h5>OPENHAT</h5> </button>
-  <button data-key="1" class="box">  <h1>G</h1>  <h5>BOOM</h5> </button>
-  <button data-key="1" class="box">  <h1>H</h1>  <h5>RIDE</h5> </button>
-  <button data-key="1" class="box">  <h1>J</h1>  <h5>SNARE</h5> </button>
-  <button data-key="1" class="box">  <h1>K</h1>  <h5>TOM</h5> </button>
-  <button data-key="1" class="box">  <h1>L</h1>  <h5>TINK</h5> </button>
+  <div data-key="65" class="box">  <h1>A</h1>  <h5>CLAP</h5> </div>
+  <div data-key="83" class="box">  <h1>S</h1>  <h5>HIHAT</h5> </div>
+  <div data-key="68" class="box">  <h1>D</h1>  <H5>KICK</H5> </div>
+  <div data-key="70" class="box">  <h1>F</h1>  <h5>OPENHAT</h5> </div>
+  <div data-key="71" class="box">  <h1>G</h1>  <h5>BOOM</h5> </div>
+  <div data-key="72" class="box">  <h1>H</h1>  <h5>RIDE</h5> </div>
+  <div data-key="74" class="box">  <h1>J</h1>  <h5>SNARE</h5> </div>
+  <div data-key="75" class="box">  <h1>K</h1>  <h5>TOM</h5> </div>
+  <div data-key="76" class="box">  <h1>L</h1>  <h5>TINK</h5> </div>
+
+  <audio data-key="65" src="src/sounds/clap.wav"></audio>
+  <audio data-key="83" src="src/sounds/hihat.wav"></audio>
+  <audio data-key="68" src="src/sounds/kick.wav"></audio>
+  <audio data-key="70" src="src/sounds/openhat.wav"></audio>
+  <audio data-key="71" src="src/sounds/boom.wav"></audio>
+  <audio data-key="72" src="src/sounds/ride.wav"></audio>
+  <audio data-key="74" src="src/sounds/snare.wav"></audio>
+  <audio data-key="75" src="src/sounds/tom.wav"></audio>
+  <audio data-key="76" src="src/sounds/tink.wav"></audio>
+
+<script>
+  window.addEventListener('keydown',function(e){
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+    const key = document.querySelector(`.box[data-key="${e.keyCode}"]`)
+    audio.currentTime = 0
+    audio.play()
+    key.classList.add('playing')
+    setTimeout(()=>{
+      key.classList.remove('playing')
+    },250)
+  })
+</script>
 </div>
 </body>
 </html>
