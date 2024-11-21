@@ -84,19 +84,6 @@
   <audio data-key="74" src="src/sounds/snare.wav"></audio>
   <audio data-key="75" src="src/sounds/tom.wav"></audio>
   <audio data-key="76" src="src/sounds/tink.wav"></audio>
-
-<script>
-  window.addEventListener('keydown',function(e){
-    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
-    const key = document.querySelector(`.box[data-key="${e.keyCode}"]`)
-    audio.currentTime = 0
-    audio.play()
-    key.classList.add('playing')
-    setTimeout(()=>{
-      key.classList.remove('playing')
-    },250)
-  })
-</script>
 </div>
 </body>
 </html>
