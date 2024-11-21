@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock</title>
+  <style>
+    body {
+      background-image: url('src/images/dark-background-abstract-background-network-3d-background-3840x2160-8324.png');
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .clock {
+      border: 10px white solid;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%; 
+      position: relative; 
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .number {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      position: absolute;
+      transform: translate(-50%, -50%); 
+    }
+
+    .num12 { top: 10px; left: 50%; transform: translate(-50%, 0); }
+    .num3 { top: 50%; left: 290px; transform: translate(-100%, -50%); }
+    .num6 { top: 290px; left: 50%; transform: translate(-50%, -100%); }
+    .num9 { top: 50%; left: 10px; transform: translate(0, -50%); }
+
+    .flesh {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .flesh1 {
+      width: 5px;
+      height: 80px;
+      background-color: white;
+      position: absolute;
+      bottom: 50%; 
+      transform-origin: bottom; 
+    }
+
+    .flesh2 {
+      width: 5px;
+      height: 115px;
+      background-color: white;
+      position: absolute;
+      bottom: 50%;
+      transform: rotate(90deg); 
+      transform-origin: bottom; 
+    }
+    .flesh3{
+      width: 5px;
+      height: 110px;
+      background-color: white;
+      position: absolute;
+      bottom: 50%;
+      transform: rotate(90deg); 
+      transform-origin: bottom; 
+    }
+  </style>
+</head>
+<body>
+  <div class="clock">
+    <div class="number num12">12</div>
+    <div class="number num3">3</div>
+    <div class="number num6">6</div>
+    <div class="number num9">9</div>
+    <div class="flesh">
+      <div class="flesh1"></div>
+      <div class="flesh2"></div>
+      <div class="flesh3"></div>
+    </div>
+  </div>
+  <script>
+    const flesh2 = document.querySelector('.flesh2')
+    const flesh1 = document.querySelector('.flesh1')
+    const flesh3 = document.querySelector('.flesh3')
+    function setDate(){
+      const now = new Date()
+      const seconds = now.getSeconds()
+      const hour = now.getHours()
+      const minutes = now.getMinutes()
+      const hourDeg = (hour % 12) * 30 + (minutes / 60) * 30;
+      const minDeg = (minutes / 60) * 360 + (seconds / 60) * 6;
+      const secondDeg = (seconds/60)*360
+      flesh2.style.transform = `rotate(${secondDeg}deg)`
+      flesh1.style.transform = `rotate(${hourDeg}deg)`
+      flesh3.style.transform = `rotate(${minDeg}deg)`
+    }
+    setInterval(setDate,1000)
+  </script>
+</body>
+</html>
