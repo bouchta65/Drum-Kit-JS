@@ -82,6 +82,15 @@
     let sortdata = []
     sortdata = inventors.sort((a,b) => b.year-a.year)
     console.table(sortdata)
+
+    // Array.prototype.reduce()
+    // 4. How many years did all the inventors live?
+    let reducedata = []
+    reducedata = inventors.reduce((total,inventor)=>{
+        return total+(inventor.passed - inventor.year)
+    },0)
+    console.log(reducedata)
+
     </script>
 </body>
 </html>
