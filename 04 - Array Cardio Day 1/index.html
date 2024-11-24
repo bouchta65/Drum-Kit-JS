@@ -74,8 +74,14 @@
 
     let mapdata = []
     mapdata = inventors.map(item => `${item.first} ${item.last}`)
-    console.log(mapdata)
+    console.table(mapdata)
     
+
+    // Array.prototype.sort()
+    // 3. Sort the inventors by birthdate, oldest to youngest
+    let sortdata = []
+    sortdata = inventors.sort((a,b) => b.year-a.year)
+    console.table(sortdata)
     </script>
 </body>
 </html>
