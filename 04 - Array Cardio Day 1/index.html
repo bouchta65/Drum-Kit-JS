@@ -31,6 +31,36 @@
       'Berne, Eric', 'Berra, Yogi', 'Berry, Wendell', 'Bevan, Aneurin', 'Ben-Gurion, David', 'Bevel, Ken', 'Biden, Joseph', 'Bennington, Chester', 'Bierce, Ambrose',
       'Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 'Beecher, Henry', 'Biondo, Frank'
     ];
+
+
+    // Array.prototype.filter()
+    // 1. Filter the list of inventors for those who were born in the 1500's
+    const filterAge1 = inventors.filter(function(inventor){
+        if(inventor.year>=1500 && inventor.year<1600){
+            return true;
+        }
+    })
+
+    //methode by me
+    
+    let filterAge3 = []
+    console.table(filterAge1)
+    inventors.forEach(element => {
+        if(element.year>=1500 && element.year<1600){
+            filterAge3.push(element)
+        }      
+    });
+    console.table(filterAge3)
+
+    
+    let filterAge2 = [];
+    for(let i = 0 ; i<inventors.length;i++){
+        if(inventors[i].year>=1500 && inventors[i].year<1600){
+            filterAge2.push(inventors[i])
+        } 
+    }
+    console.table(filterAge2)
+
     </script>
 </body>
 </html>
