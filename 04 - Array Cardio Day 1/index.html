@@ -91,6 +91,10 @@
     },0)
     console.log(reducedata)
 
+    // 5. Sort the inventors by years lived
+    let sortliveddata = []
+    sortliveddata = inventors.sort((a,b) => (b.passed - b.year) - (a.passed - a.year))
+    console.table(sortliveddata)
     </script>
 </body>
 </html>
