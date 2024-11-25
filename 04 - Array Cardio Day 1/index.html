@@ -32,7 +32,6 @@
       'Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 'Beecher, Henry', 'Biondo, Frank'
     ];
 
-
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
     const filterdata1 = inventors.filter(function(inventor){
@@ -65,10 +64,6 @@
     console.table(filterdata2)
 
 
-
-
-
-
     // Array.prototype.map()
     // 2. Give us an array of the inventor first and last names
 
@@ -95,6 +90,15 @@
     let sortliveddata = []
     sortliveddata = inventors.sort((a,b) => (b.passed - b.year) - (a.passed - a.year))
     console.table(sortliveddata)
+
+    // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
+    // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+
+    let tabledata = []
+    document.querySelectorAll('.mw-category-group li').forEach(item => {tabledata.push(item.innerText)})
+    const datafiltred = tabledata.filter(item => item.includes('de'))
+    
+
     </script>
 </body>
 </html>
